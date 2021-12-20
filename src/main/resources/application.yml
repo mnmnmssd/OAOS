@@ -9,9 +9,12 @@ server:
     connection-timeout: 5000ms
   port: 8080
   servlet:
-    context-path: /OAmangerOS
+    context-path: /OAmanagerOS
 
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     # 设置数据源为阿里巴巴的druid数据连接池
     type: com.alibaba.druid.pool.DruidDataSource
@@ -50,12 +53,12 @@ spring:
       password: abc123456
 
 mybatis:
-  config-location: classpath*:mapper/*.xml
   type-aliases-package: com.example.oamanageros.wx.db.pojo
   configuration:
     # 设置sql日志输出 方便调试
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
 
 logging:
   level:

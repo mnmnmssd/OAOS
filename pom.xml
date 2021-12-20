@@ -88,17 +88,18 @@
             <version>4.5.13</version>
         </dependency>
 
-        <!-- 添加swagger2依赖库支持 -->
+        <!-- 整合swagger2 测试接口-->
         <dependency>
             <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
+            <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
 
+        <!-- 配置验证库Validation -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>2.6.1</version>
         </dependency>
 
     </dependencies>
