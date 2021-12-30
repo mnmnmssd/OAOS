@@ -44,12 +44,12 @@ public class SwaggerConfig implements WebMvcConfigurer {
         selectorBuilder.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class));
         docket = selectorBuilder.build();
 
-        //设置JWT 令牌
+        // 设置JWT 令牌
         ApiKey apiKey = new ApiKey("token", "token", "header");
         List<SecurityScheme> apiKeys = Collections.singletonList(apiKey);
         docket.securitySchemes(apiKeys);
 
-        //设置作用域
+        // 设置作用域
         AuthorizationScope scope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] scopes = {scope};
         SecurityReference reference = new SecurityReference("token", scopes);
